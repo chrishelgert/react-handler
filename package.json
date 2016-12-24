@@ -1,6 +1,6 @@
 {
   "name": "react-handler",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "react-component that handles different states (loading, error, ...)",
   "main": "src/index.js",
   "scripts": {
