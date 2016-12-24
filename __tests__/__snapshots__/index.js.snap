@@ -1,0 +1,10 @@
+exports[`react-handler should contain the Handler-Component 1`] = `[Function]`;
+
+exports[`react-handler should contain the SupHandler´s 1`] = `
+Object {
+  "EmptyHandler": [Function],
+  "ErrorHandler": [Function],
+  "LoadingHandler": [Function],
+  "default": [Function],
+}
+`;

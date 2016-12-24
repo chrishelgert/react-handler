@@ -1,0 +1,18 @@
+exports[`LoadingHandler should return the LoadingComponent 1`] = `
+<img
+  alt="loading..."
+  src="/img/spinner.svg" />
+`;
+
+exports[`LoadingHandler should return the LoadingMessage when called without LoadingComponent 1`] = `
+<div
+  className="handler--loading">
+  loading...
+</div>
+`;
+
+exports[`LoadingHandler should return the component when called with loading false 1`] = `
+<h1>
+  Test
+</h1>
+`;

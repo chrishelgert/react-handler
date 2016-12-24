@@ -1,0 +1,19 @@
+exports[`ErrorHandler should return the ErrorComponent 1`] = `
+<h2
+  className="error">
+  failed to call api
+</h2>
+`;
+
+exports[`ErrorHandler should return the ErrorMessage when called without ErrorComponent 1`] = `
+<div
+  className="handler--error">
+  failed to call api
+</div>
+`;
+
+exports[`ErrorHandler should return the component when called without errorMsg 1`] = `
+<h1>
+  Test
+</h1>
+`;
