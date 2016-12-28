@@ -19,6 +19,9 @@ const config = {
       'process.env.NODE_ENV': JSON.stringify(env),
     }),
   ],
+  externals: {
+    react: 'React',
+  },
 };
 
 if (env === 'production') {
