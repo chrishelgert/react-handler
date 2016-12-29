@@ -21,14 +21,18 @@ const EmptyHandler = ({
     return <EmptyMessage>{emptyMsg}</EmptyMessage>;
   }
 
-  return <Component {...componentProps} />;
+  if (Component) {
+    return <Component {...componentProps} />;
+  }
+
+  return null;
 };
 
 EmptyHandler.propTypes = {
   emptyMsg: PropTypes.string.isRequired,
   emptyPropertyKey: PropTypes.string,
   EmptyComponent: PropTypes.func,
-  Component: PropTypes.func.isRequired,
+  Component: PropTypes.func,
   componentProps: PropTypes.object,
 };
 
