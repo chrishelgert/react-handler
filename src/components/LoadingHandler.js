@@ -15,12 +15,16 @@ const LoadingHandler = ({
     return LoadingComponent ? <LoadingComponent /> : <LoadingMessage />;
   }
 
-  return <Component {...componentProps} />;
+  if (Component) {
+    return <Component {...componentProps} />;
+  }
+
+  return null;
 };
 
 LoadingHandler.propTypes = {
   LoadingComponent: PropTypes.func,
-  Component: PropTypes.func.isRequired,
+  Component: PropTypes.func,
   componentProps: PropTypes.object,
   loading: PropTypes.bool,
 };

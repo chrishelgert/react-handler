@@ -13,6 +13,13 @@ describe('LoadingHandler', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
+  it('should return null when called with loading false and no component', () => {
+    const tree = renderer.create(
+      <LoadingHandler loading={false} />,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should return the LoadingComponent', () => {
     const tree = renderer.create(
       <LoadingHandler LoadingComponent={LoadingComponent} Component={TestComponent} />,

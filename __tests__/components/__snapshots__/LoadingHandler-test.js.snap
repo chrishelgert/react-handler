@@ -1,3 +1,5 @@
+exports[`LoadingHandler should return null when called with loading false and no component 1`] = `null`;
+
 exports[`LoadingHandler should return the LoadingComponent 1`] = `
 <img
   alt="loading..."
