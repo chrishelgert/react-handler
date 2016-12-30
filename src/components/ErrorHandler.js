@@ -14,13 +14,17 @@ const ErrorHandler = ({ errorMsg, ErrorComponent, Component, componentProps = {}
     return <ErrorMessage>{errorMsg}</ErrorMessage>;
   }
 
-  return <Component {...componentProps} />;
+  if (Component) {
+    return <Component {...componentProps} />;
+  }
+
+  return null;
 };
 
 ErrorHandler.propTypes = {
   errorMsg: PropTypes.string,
   ErrorComponent: PropTypes.func,
-  Component: PropTypes.func.isRequired,
+  Component: PropTypes.func,
   componentProps: PropTypes.object,
 };
 

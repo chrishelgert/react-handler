@@ -15,6 +15,11 @@ describe('ErrorHandler', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
+  it('should return null when called without errorMsg and component', () => {
+    const tree = renderer.create(<ErrorHandler />);
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should return the ErrorComponent', () => {
     const tree = renderer.create(
       <ErrorHandler

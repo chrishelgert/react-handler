@@ -1,3 +1,5 @@
+exports[`ErrorHandler should return null when called without errorMsg and component 1`] = `null`;
+
 exports[`ErrorHandler should return the ErrorComponent 1`] = `
 <h2
   className="error">
