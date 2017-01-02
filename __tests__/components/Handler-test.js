@@ -8,8 +8,8 @@ ErrorComponent.propTypes = { children: PropTypes.string };
 const EmptyComponent = ({ children }) => <h2 className="empty">{children}</h2>;
 EmptyComponent.propTypes = { children: PropTypes.string };
 const Component = () => <div>Test</div>;
-const errorMsg = 'error..';
-const emptyMsg = 'empty..';
+const errorMessage = 'error..';
+const emptyMessage = 'empty..';
 
 describe('Handler', () => {
   describe('loading-state', () => {
@@ -38,7 +38,7 @@ describe('Handler', () => {
       const tree = renderer.create(
         <Handler
           loading={false}
-          errorMsg={errorMsg}
+          errorMessage={errorMessage}
           ErrorComponent={ErrorComponent}
           Component={Component}
         />,
@@ -51,7 +51,7 @@ describe('Handler', () => {
       const tree = renderer.create(
         <Handler
           loading={false}
-          errorMsg={errorMsg}
+          errorMessage={errorMessage}
           Component={Component}
         />,
       );
@@ -67,7 +67,7 @@ describe('Handler', () => {
           loading={false}
           EmptyComponent={EmptyComponent}
           emptyPropertyKey="list"
-          emptyMsg={emptyMsg}
+          emptyMessage={emptyMessage}
           componentProps={{ list: [] }}
           Component={Component}
         />,
@@ -81,7 +81,7 @@ describe('Handler', () => {
         <Handler
           loading={false}
           emptyPropertyKey="list"
-          emptyMsg={emptyMsg}
+          emptyMessage={emptyMessage}
           componentProps={{ list: [] }}
           Component={Component}
         />,

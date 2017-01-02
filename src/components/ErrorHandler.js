@@ -1,17 +1,16 @@
 import React, { PropTypes } from 'react';
-import { ErrorMessage } from './Messages';
 
 /**
  * This Mini-Handler handles only the error-state
  * or display the given Component.
  */
-const ErrorHandler = ({ errorMsg, ErrorComponent, Component, componentProps = {} }) => {
-  if (errorMsg) {
+const ErrorHandler = ({ message, ErrorComponent, Component, componentProps = {} }) => {
+  if (message) {
     if (ErrorComponent) {
-      return <ErrorComponent>{errorMsg}</ErrorComponent>;
+      return <ErrorComponent>{message}</ErrorComponent>;
     }
 
-    return <ErrorMessage>{errorMsg}</ErrorMessage>;
+    return <div className="handler--error">{message}</div>;
   }
 
   if (Component) {
@@ -22,7 +21,7 @@ const ErrorHandler = ({ errorMsg, ErrorComponent, Component, componentProps = {}
 };
 
 ErrorHandler.propTypes = {
-  errorMsg: PropTypes.string,
+  message: PropTypes.string,
   ErrorComponent: PropTypes.func,
   Component: PropTypes.func,
   componentProps: PropTypes.object,

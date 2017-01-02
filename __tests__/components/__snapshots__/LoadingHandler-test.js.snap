@@ -13,6 +13,13 @@ exports[`LoadingHandler should return the LoadingMessage when called without Loa
 </div>
 `;
 
+exports[`LoadingHandler should return the LoadingMessage with given loading message 1`] = `
+<div
+  className="handler--loading">
+  keep keep loading
+</div>
+`;
+
 exports[`LoadingHandler should return the component when called with loading false 1`] = `
 <h1>
   Test

@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { EmptyMessage } from './Messages';
 import isEmpty from '../utils/isEmpty';
 
 /**
@@ -7,7 +6,7 @@ import isEmpty from '../utils/isEmpty';
  * or display the given Component.
  */
 const EmptyHandler = ({
-  emptyMsg,
+  message,
   emptyPropertyKey,
   EmptyComponent,
   Component,
@@ -15,10 +14,10 @@ const EmptyHandler = ({
 }) => {
   if (isEmpty(emptyPropertyKey, componentProps)) {
     if (EmptyComponent) {
-      return <EmptyComponent>{emptyMsg}</EmptyComponent>;
+      return <EmptyComponent>{message}</EmptyComponent>;
     }
 
-    return <EmptyMessage>{emptyMsg}</EmptyMessage>;
+    return <div className="handler--empty">{message}</div>;
   }
 
   if (Component) {
@@ -29,7 +28,7 @@ const EmptyHandler = ({
 };
 
 EmptyHandler.propTypes = {
-  emptyMsg: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
   emptyPropertyKey: PropTypes.string,
   EmptyComponent: PropTypes.func,
   Component: PropTypes.func,

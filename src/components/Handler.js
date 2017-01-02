@@ -12,17 +12,24 @@ const Handler = ({
   ErrorComponent,
   EmptyComponent,
   Component,
-  errorMsg,
-  emptyMsg = '',
+  loadingMessage,
+  errorMessage,
+  emptyMessage = '',
   emptyPropertyKey,
   componentProps = {},
   loading = true,
 }) => (
   <div className="handler">
-    <LoadingHandler loading={loading} LoadingComponent={LoadingComponent} />
-    <ErrorHandler errorMsg={errorMsg} ErrorComponent={ErrorComponent} />
+    <LoadingHandler
+      loading={loading}
+      message={loadingMessage}
+      LoadingComponent={LoadingComponent}
+    />
+
+    <ErrorHandler message={errorMessage} ErrorComponent={ErrorComponent} />
+
     <EmptyHandler
-      emptyMsg={emptyMsg}
+      message={emptyMessage}
       emptyPropertyKey={emptyPropertyKey}
       EmptyComponent={EmptyComponent}
       componentProps={componentProps}
@@ -36,8 +43,9 @@ Handler.propTypes = {
   ErrorComponent: PropTypes.func,
   EmptyComponent: PropTypes.func,
   Component: PropTypes.func.isRequired,
-  errorMsg: PropTypes.string,
-  emptyMsg: PropTypes.string,
+  loadingMessage: PropTypes.string,
+  errorMessage: PropTypes.string,
+  emptyMessage: PropTypes.string,
   emptyPropertyKey: PropTypes.string,
   componentProps: PropTypes.object,
   loading: PropTypes.bool,

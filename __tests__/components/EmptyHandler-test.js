@@ -8,14 +8,14 @@ EmptyComponent.propTypes = { children: PropTypes.string };
 const emptyPropertyKey = 'list';
 const componentPropsFilled = { list: ['abc', 'def'] };
 const componentPropsEmpty = { list: [] };
-const emptyMsg = 'no results found';
+const emptyMessage = 'no results found';
 
 describe('EmptyHandler', () => {
   it('should return null when called wihtout Component and is not empty', () => {
     const tree = renderer.create(
       <EmptyHandler
         componentProps={componentPropsFilled}
-        emptyMsg={emptyMsg}
+        message={emptyMessage}
       />,
     );
     expect(tree).toMatchSnapshot();
@@ -26,7 +26,7 @@ describe('EmptyHandler', () => {
       <EmptyHandler
         Component={TestComponent}
         componentProps={componentPropsFilled}
-        emptyMsg={emptyMsg}
+        message={emptyMessage}
       />,
     );
     expect(tree.toJSON()).toMatchSnapshot();
@@ -38,7 +38,7 @@ describe('EmptyHandler', () => {
         Component={TestComponent}
         componentProps={componentPropsFilled}
         emptyPropertyKey={emptyPropertyKey}
-        emptyMsg={emptyMsg}
+        message={emptyMessage}
       />,
     );
     expect(tree.toJSON()).toMatchSnapshot();
@@ -51,7 +51,7 @@ describe('EmptyHandler', () => {
         EmptyComponent={EmptyComponent}
         componentProps={componentPropsEmpty}
         emptyPropertyKey={emptyPropertyKey}
-        emptyMsg={emptyMsg}
+        message={emptyMessage}
       />,
     );
     expect(tree.toJSON()).toMatchSnapshot();
@@ -63,7 +63,7 @@ describe('EmptyHandler', () => {
         Component={TestComponent}
         componentProps={componentPropsEmpty}
         emptyPropertyKey={emptyPropertyKey}
-        emptyMsg={emptyMsg}
+        message={emptyMessage}
       />,
     );
     expect(tree.toJSON()).toMatchSnapshot();

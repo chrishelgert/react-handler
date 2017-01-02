@@ -27,6 +27,13 @@ describe('LoadingHandler', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
+  it('should return the LoadingMessage with given loading message', () => {
+    const tree = renderer.create(
+      <LoadingHandler Component={TestComponent} message="keep keep loading" />,
+    );
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
   it('should return the LoadingMessage when called without LoadingComponent', () => {
     const tree = renderer.create(
       <LoadingHandler Component={TestComponent} />,

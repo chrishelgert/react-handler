@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { LoadingMessage } from './Messages';
 
 /**
  * This Mini-Handler handles only the loading-state
@@ -10,9 +9,10 @@ const LoadingHandler = ({
   Component,
   componentProps = {},
   loading = true,
+  message = 'loading...',
 }) => {
   if (loading) {
-    return LoadingComponent ? <LoadingComponent /> : <LoadingMessage />;
+    return LoadingComponent ? <LoadingComponent /> : <div className="handler--loading">{message}</div>;
   }
 
   if (Component) {
@@ -27,6 +27,7 @@ LoadingHandler.propTypes = {
   Component: PropTypes.func,
   componentProps: PropTypes.object,
   loading: PropTypes.bool,
+  message: PropTypes.string,
 };
 
 export default LoadingHandler;

@@ -1,4 +1,4 @@
-exports[`ErrorHandler should return null when called without errorMsg and component 1`] = `null`;
+exports[`ErrorHandler should return null when called without errorMessage and component 1`] = `null`;
 
 exports[`ErrorHandler should return the ErrorComponent 1`] = `
 <h2
@@ -14,7 +14,7 @@ exports[`ErrorHandler should return the ErrorMessage when called without ErrorCo
 </div>
 `;
 
-exports[`ErrorHandler should return the component when called without errorMsg 1`] = `
+exports[`ErrorHandler should return the component when called without errorMessage 1`] = `
 <h1>
   Test
 </h1>
