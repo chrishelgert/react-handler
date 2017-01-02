@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import isEmpty from '../utils/isEmpty';
 
 /**
  * This Mini-Handler handles only the empty-state
@@ -12,12 +11,16 @@ const EmptyHandler = ({
   Component,
   componentProps = {},
 }) => {
-  if (isEmpty(emptyPropertyKey, componentProps)) {
-    if (EmptyComponent) {
-      return <EmptyComponent>{message}</EmptyComponent>;
-    }
+  if (emptyPropertyKey) {
+    const match = componentProps[emptyPropertyKey];
 
-    return <div className="handler--empty">{message}</div>;
+    if (!(match && match.length)) {
+      if (EmptyComponent) {
+        return <EmptyComponent>{message}</EmptyComponent>;
+      }
+
+      return <div className="handler--empty">{message}</div>;
+    }
   }
 
   if (Component) {
