@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
-import { LoadingMessage, ErrorMessage, EmptyMessage } from './Messages';
-import isEmpty from '../utils/isEmpty';
+import EmptyHandler from './EmptyHandler';
+import ErrorHandler from './ErrorHandler';
+import LoadingHandler from './LoadingHandler';
 
 /**
  * The Handler handles loading, error and empty state
@@ -12,33 +13,23 @@ const Handler = ({
   EmptyComponent,
   Component,
   errorMsg,
-  emptyMsg,
+  emptyMsg = '',
   emptyPropertyKey,
   componentProps = {},
   loading = true,
-}) => {
-  if (loading) {
-    return LoadingComponent ? <LoadingComponent /> : <LoadingMessage />;
-  }
-
-  if (errorMsg) {
-    if (ErrorComponent) {
-      return <ErrorComponent>{errorMsg}</ErrorComponent>;
-    }
-
-    return <ErrorMessage>{errorMsg}</ErrorMessage>;
-  }
-
-  if (isEmpty(emptyPropertyKey, componentProps)) {
-    if (EmptyComponent) {
-      return <EmptyComponent>{emptyMsg}</EmptyComponent>;
-    }
-
-    return <EmptyMessage>{emptyMsg}</EmptyMessage>;
-  }
-
-  return <Component {...componentProps} />;
-};
+}) => (
+  <div className="handler">
+    <LoadingHandler loading={loading} LoadingComponent={LoadingComponent} />
+    <ErrorHandler errorMsg={errorMsg} ErrorComponent={ErrorComponent} />
+    <EmptyHandler
+      emptyMsg={emptyMsg}
+      emptyPropertyKey={emptyPropertyKey}
+      EmptyComponent={EmptyComponent}
+      componentProps={componentProps}
+      Component={Component}
+    />
+  </div>
+);
 
 Handler.propTypes = {
   LoadingComponent: PropTypes.func,

@@ -1,53 +1,89 @@
 exports[`Handler Component should return the Component, when there is no error, loading false and no emptyPropertyKey 1`] = `
-<div>
-  Test
+<div
+  className="handler">
+  <div>
+    Test
+  </div>
 </div>
 `;
 
 exports[`Handler Component should return the Component, when there is no error, loading false and the entry filled 1`] = `
-<div>
-  Test
+<div
+  className="handler">
+  <div>
+    Test
+  </div>
 </div>
 `;
 
 exports[`Handler empty-state should return the EmptyComponent, when it is set 1`] = `
-<h2
-  className="empty">
-  empty..
-</h2>
+<div
+  className="handler">
+  <h2
+    className="empty">
+    empty..
+  </h2>
+</div>
 `;
 
 exports[`Handler empty-state should return the EmptyMessage 1`] = `
 <div
-  className="handler--empty">
-  empty..
+  className="handler">
+  <div
+    className="handler--empty">
+    empty..
+  </div>
 </div>
 `;
 
 exports[`Handler error-state should return the ErrorComponent, when it is set 1`] = `
-<h2
-  className="error">
-  error..
-</h2>
+<div
+  className="handler">
+  <h2
+    className="error">
+    error..
+  </h2>
+  <div>
+    Test
+  </div>
+</div>
 `;
 
 exports[`Handler error-state should return the ErrorMessage 1`] = `
 <div
-  className="handler--error">
-  error..
+  className="handler">
+  <div
+    className="handler--error">
+    error..
+  </div>
+  <div>
+    Test
+  </div>
 </div>
 `;
 
 exports[`Handler loading-state should return the LoadingComponent, when it is set 1`] = `
-<h2
-  className="loading">
-  loading...
-</h2>
+<div
+  className="handler">
+  <h2
+    className="loading">
+    loading...
+  </h2>
+  <div>
+    Test
+  </div>
+</div>
 `;
 
 exports[`Handler loading-state should return the LoadingMessage 1`] = `
 <div
-  className="handler--loading">
-  loading...
+  className="handler">
+  <div
+    className="handler--loading">
+    loading...
+  </div>
+  <div>
+    Test
+  </div>
 </div>
 `;
