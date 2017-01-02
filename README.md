@@ -6,4 +6,4 @@
 * Examples
 
 ## License
-Copyright (c) 2016 Chris Helgert. See License for details.
+Copyright (c) 2016-2017 Chris Helgert. See License for details.
