@@ -26,14 +26,18 @@ const Handler = ({
       LoadingComponent={LoadingComponent}
     />
 
-    <ErrorHandler message={errorMessage} ErrorComponent={ErrorComponent} />
-
-    <EmptyHandler
-      message={emptyMessage}
-      emptyPropertyKey={emptyPropertyKey}
-      EmptyComponent={EmptyComponent}
-      componentProps={componentProps}
-      Component={Component}
+    <ErrorHandler
+      message={errorMessage}
+      ErrorComponent={ErrorComponent}
+      Component={() => (
+        <EmptyHandler
+          message={emptyMessage}
+          emptyPropertyKey={emptyPropertyKey}
+          EmptyComponent={EmptyComponent}
+          componentProps={componentProps}
+          Component={Component}
+        />
+      )}
     />
   </div>
 );

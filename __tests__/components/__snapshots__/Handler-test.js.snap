@@ -43,9 +43,6 @@ exports[`Handler error-state should return the ErrorComponent, when it is set 1`
     className="error">
     error..
   </h2>
-  <div>
-    Test
-  </div>
 </div>
 `;
 
@@ -55,9 +52,6 @@ exports[`Handler error-state should return the ErrorMessage 1`] = `
   <div
     className="handler--error">
     error..
-  </div>
-  <div>
-    Test
   </div>
 </div>
 `;
