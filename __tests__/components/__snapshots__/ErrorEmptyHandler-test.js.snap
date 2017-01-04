@@ -1,0 +1,19 @@
+exports[`ErrorEmptyHandler should display the Component 1`] = `
+<div>
+  Test
+</div>
+`;
+
+exports[`ErrorEmptyHandler should display the empty-message 1`] = `
+<div
+  className="handler--empty">
+  0 Articles found
+</div>
+`;
+
+exports[`ErrorEmptyHandler should display the error-message 1`] = `
+<div
+  className="handler--error">
+  failed to load articles
+</div>
+`;

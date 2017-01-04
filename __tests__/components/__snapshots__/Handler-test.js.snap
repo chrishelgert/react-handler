@@ -1,4 +1,4 @@
-exports[`Handler Component should return the Component, when there is no error, loading false and no emptyPropertyKey 1`] = `
+exports[`Handler should only return the Component, when loading and showComponentWhileLoading is false 1`] = `
 <div
   className="handler">
   <div>
@@ -7,69 +7,17 @@ exports[`Handler Component should return the Component, when there is no error, 
 </div>
 `;
 
-exports[`Handler Component should return the Component, when there is no error, loading false and the entry filled 1`] = `
-<div
-  className="handler">
-  <div>
-    Test
-  </div>
-</div>
-`;
-
-exports[`Handler empty-state should return the EmptyComponent, when it is set 1`] = `
-<div
-  className="handler">
-  <h2
-    className="empty">
-    empty..
-  </h2>
-</div>
-`;
-
-exports[`Handler empty-state should return the EmptyMessage 1`] = `
+exports[`Handler should only return the loading-message, wen showComponentWhileLoading is false 1`] = `
 <div
   className="handler">
   <div
-    className="handler--empty">
-    empty..
-  </div>
-</div>
-`;
-
-exports[`Handler error-state should return the ErrorComponent, when it is set 1`] = `
-<div
-  className="handler">
-  <h2
-    className="error">
-    error..
-  </h2>
-</div>
-`;
-
-exports[`Handler error-state should return the ErrorMessage 1`] = `
-<div
-  className="handler">
-  <div
-    className="handler--error">
-    error..
-  </div>
-</div>
-`;
-
-exports[`Handler loading-state should return the LoadingComponent, when it is set 1`] = `
-<div
-  className="handler">
-  <h2
-    className="loading">
+    className="handler--loading">
     loading...
-  </h2>
-  <div>
-    Test
   </div>
 </div>
 `;
 
-exports[`Handler loading-state should return the LoadingMessage 1`] = `
+exports[`Handler should return the loading-message and the component 1`] = `
 <div
   className="handler">
   <div

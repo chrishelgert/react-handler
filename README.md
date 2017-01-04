@@ -25,22 +25,25 @@ class Example extends Component {
 
   // ...
 
-  return (
-    <Handler
-      loading={this.state.loading}
-      errorMessage={this.state.error}
-      loadingMessage="loading..."
-      emptyMessage="0 Articles found"
-      Component={ArticleList}
-      componentProps={{ articles }}
-      emptyPropertyKey="articles"
-    />
-  );
+  render() {
+    return (
+      <Handler
+        loading={this.state.loading}
+        errorMessage={this.state.error}
+        loadingMessage="loading..."
+        emptyMessage="0 Articles found"
+        Component={ArticleList}
+        componentProps={{ articles: this.state.articles }}
+        emptyPropertyKey="articles"
+      />
+    );
+  }
 }
 ```
 
 > Configuration
 * All params from Subhandler´s will be available in Handler (Messages will only be prefixed)
+* showComponentWhileLoading - will show you´re Component while your data is loading (default: true)
 
 ### Sub-Handler
 
@@ -60,13 +63,15 @@ class Example extends Component {
 
   // ...
 
-  return (
-    <LoadingHandler
-      loading={this.state.loading}
-      Component={ArticleList}
-      componentProps={{ articles }}
-    />
-  );
+  render() {
+    return (
+      <LoadingHandler
+        loading={this.state.loading}
+        Component={ArticleList}
+        componentProps={{ articles: this.state.articles }}
+      />
+    );
+  }
 }
 ```
 
@@ -95,13 +100,15 @@ class Example extends Component {
 
   // ...
 
-  return (
-    <ErrorHandler
-      message={this.state.error}
-      Component={ArticleList}
-      componentProps={{ articles }}
-    />
-  );
+  render() {
+    return (
+      <ErrorHandler
+        message={this.state.error}
+        Component={ArticleList}
+        componentProps={{ articles: this.state.articles }}
+      />
+    );
+  }
 }
 ```
 
@@ -128,14 +135,16 @@ class Example extends Component {
 
   // ...
 
-  return (
-    <EmptyHandler
-      message="0 Articles found."
-      Component={ArticleList}
-      componentProps={{ articles }}
-      emptyPropertyKey="articles"
-    />
-  );
+  render() {
+    return (
+      <EmptyHandler
+        message="0 Articles found."
+        Component={ArticleList}
+        componentProps={{ articles: this.state.articles }}
+        emptyPropertyKey="articles"
+      />
+    );
+  }
 }
 ```
 
@@ -145,6 +154,41 @@ class Example extends Component {
 * componentProps - Properties for your Component
 * emptyPropertyKey - which Property should be checked
 * message - Define your Empty-Message
+
+***
+
+#### ErrorEmptyHandler
+
+```javascript
+import { EmptyHandler } from 'react-handler';
+import ArticleList from './ArticleList';
+
+class Example extends Component {
+  // ...
+
+  state = {
+    articles: this.props.articles,
+    error: '',
+  };
+
+  // ...
+
+  render() {
+    return (
+      <ErrorEmptyHandler
+        errorMessage={this.state.error}
+        emptyMessage="0 Articles found."
+        Component={ArticleList}
+        componentProps={{ articles: this.state.articles }}
+        emptyPropertyKey="articles"
+      />
+    );
+  }
+}
+```
+
+> Configuration:
+* Combines both Configuration´s from EmptyHandler and ErrorHandler, the messages will only be prefixed.
 
 ## Contributing
 

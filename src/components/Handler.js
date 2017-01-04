@@ -1,58 +1,51 @@
 import React, { PropTypes } from 'react';
-import EmptyHandler from './EmptyHandler';
-import ErrorHandler from './ErrorHandler';
+import ErrorEmptyHandler from './ErrorEmptyHandler';
 import LoadingHandler from './LoadingHandler';
 
 /**
  * The Handler handles loading, error and empty state
  * or display the given Component.
  */
-const Handler = ({
-  LoadingComponent,
-  ErrorComponent,
-  EmptyComponent,
-  Component,
-  loadingMessage,
-  errorMessage,
-  emptyMessage = '',
-  emptyPropertyKey,
-  componentProps = {},
-  loading = true,
-}) => (
-  <div className="handler">
-    <LoadingHandler
-      loading={loading}
-      message={loadingMessage}
-      LoadingComponent={LoadingComponent}
-    />
+const Handler = (props) => {
+  const {
+    LoadingComponent,
+    loadingMessage,
+    loading = true,
+    showComponentWhileLoading = true,
+  } = props;
 
-    <ErrorHandler
-      message={errorMessage}
-      ErrorComponent={ErrorComponent}
-      Component={() => (
-        <EmptyHandler
-          message={emptyMessage}
-          emptyPropertyKey={emptyPropertyKey}
-          EmptyComponent={EmptyComponent}
-          componentProps={componentProps}
-          Component={Component}
+  if (showComponentWhileLoading) {
+    return (
+      <div className="handler">
+        <LoadingHandler
+          loading={loading}
+          message={loadingMessage}
+          LoadingComponent={LoadingComponent}
         />
-      )}
-    />
-  </div>
-);
+
+        <ErrorEmptyHandler {...props} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="handler">
+      <LoadingHandler
+        loading={loading}
+        message={loadingMessage}
+        LoadingComponent={LoadingComponent}
+        Component={ErrorEmptyHandler}
+        componentProps={props}
+      />
+    </div>
+  );
+};
 
 Handler.propTypes = {
   LoadingComponent: PropTypes.func,
-  ErrorComponent: PropTypes.func,
-  EmptyComponent: PropTypes.func,
-  Component: PropTypes.func.isRequired,
   loadingMessage: PropTypes.string,
-  errorMessage: PropTypes.string,
-  emptyMessage: PropTypes.string,
-  emptyPropertyKey: PropTypes.string,
-  componentProps: PropTypes.object,
   loading: PropTypes.bool,
+  showComponentWhileLoading: PropTypes.bool,
 };
 
 export default Handler;
