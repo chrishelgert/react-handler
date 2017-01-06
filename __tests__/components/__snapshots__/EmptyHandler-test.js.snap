@@ -1,10 +1,17 @@
-exports[`EmptyHandler should return null when called wihtout Component and is not empty 1`] = `null`;
+exports[`EmptyHandler should return null when called without Component and is not empty 1`] = `null`;
 
 exports[`EmptyHandler should return the EmptyComponent, when the list is empty and called with EmptyComponent 1`] = `
 <h2
   className="empty">
   no results found
 </h2>
+`;
+
+exports[`EmptyHandler should return the EmptyMessage, when called without componentProps 1`] = `
+<div
+  className="handler--empty">
+  no results found
+</div>
 `;
 
 exports[`EmptyHandler should return the EmptyMessage, when the list is empty 1`] = `

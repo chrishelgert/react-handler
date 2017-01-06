@@ -11,7 +11,7 @@ const componentPropsEmpty = { list: [] };
 const emptyMessage = 'no results found';
 
 describe('EmptyHandler', () => {
-  it('should return null when called wihtout Component and is not empty', () => {
+  it('should return null when called without Component and is not empty', () => {
     const tree = renderer.create(
       <EmptyHandler
         componentProps={componentPropsFilled}
@@ -62,6 +62,17 @@ describe('EmptyHandler', () => {
       <EmptyHandler
         Component={TestComponent}
         componentProps={componentPropsEmpty}
+        emptyPropertyKey={emptyPropertyKey}
+        message={emptyMessage}
+      />,
+    );
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
+  it('should return the EmptyMessage, when called without componentProps', () => {
+    const tree = renderer.create(
+      <EmptyHandler
+        Component={TestComponent}
         emptyPropertyKey={emptyPropertyKey}
         message={emptyMessage}
       />,
