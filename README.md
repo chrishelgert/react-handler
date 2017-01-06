@@ -2,6 +2,8 @@
 
 > A react-component for handling typical react/redux-states (loading, error, ...)
 
+[![Build Status](https://travis-ci.org/chrishelgert/react-handler.svg?branch=master)](https://travis-ci.org/chrishelgert/react-handler)
+
 ## Usage
 
 ```bash
