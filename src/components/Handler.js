@@ -10,6 +10,7 @@ const Handler = (props) => {
   const {
     LoadingComponent,
     loadingMessage,
+    children,
     loading = true,
     showComponentWhileLoading = true,
   } = props;
@@ -23,7 +24,9 @@ const Handler = (props) => {
           LoadingComponent={LoadingComponent}
         />
 
-        <ErrorEmptyHandler {...props} />
+        <ErrorEmptyHandler {...props}>
+          {children}
+        </ErrorEmptyHandler>
       </div>
     );
   }
@@ -34,9 +37,11 @@ const Handler = (props) => {
         loading={loading}
         message={loadingMessage}
         LoadingComponent={LoadingComponent}
-        Component={ErrorEmptyHandler}
-        componentProps={props}
-      />
+      >
+        <ErrorEmptyHandler {...props}>
+          {children}
+        </ErrorEmptyHandler>
+      </LoadingHandler>
     </div>
   );
 };
@@ -46,6 +51,7 @@ Handler.propTypes = {
   loadingMessage: PropTypes.string,
   loading: PropTypes.bool,
   showComponentWhileLoading: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 export default Handler;

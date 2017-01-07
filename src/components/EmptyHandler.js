@@ -6,36 +6,26 @@ import React, { PropTypes } from 'react';
  */
 const EmptyHandler = ({
   message,
-  emptyPropertyKey,
+  checkedProperty,
   EmptyComponent,
-  Component,
-  componentProps = {},
+  children,
 }) => {
-  if (emptyPropertyKey) {
-    const match = componentProps[emptyPropertyKey];
-
-    if (!(match && match.length)) {
-      if (EmptyComponent) {
-        return <EmptyComponent>{message}</EmptyComponent>;
-      }
-
-      return <div className="handler--empty">{message}</div>;
+  if (!(checkedProperty && checkedProperty.length)) {
+    if (EmptyComponent) {
+      return <EmptyComponent>{message}</EmptyComponent>;
     }
+
+    return <div className="handler--empty">{message}</div>;
   }
 
-  if (Component) {
-    return <Component {...componentProps} />;
-  }
-
-  return null;
+  return children || null;
 };
 
 EmptyHandler.propTypes = {
   message: PropTypes.string.isRequired,
-  emptyPropertyKey: PropTypes.string,
+  checkedProperty: PropTypes.any,
   EmptyComponent: PropTypes.func,
-  Component: PropTypes.func,
-  componentProps: PropTypes.object,
+  children: PropTypes.node,
 };
 
 export default EmptyHandler;

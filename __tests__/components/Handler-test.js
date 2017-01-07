@@ -3,11 +3,14 @@ import renderer from 'react-test-renderer';
 import Handler from '../../src/components/Handler';
 
 const Component = () => <div>Test</div>;
+const checkedProperty = ['test'];
 
 describe('Handler', () => {
   it('should return the loading-message and the component', () => {
     const tree = renderer.create(
-      <Handler Component={Component} />,
+      <Handler checkedProperty={checkedProperty}>
+        <Component />
+      </Handler>,
     );
 
     expect(tree.toJSON()).toMatchSnapshot();
@@ -15,10 +18,9 @@ describe('Handler', () => {
 
   it('should only return the loading-message, wen showComponentWhileLoading is false', () => {
     const tree = renderer.create(
-      <Handler
-        Component={Component}
-        showComponentWhileLoading={false}
-      />,
+      <Handler showComponentWhileLoading={false} checkedProperty={checkedProperty}>
+        <Component />
+      </Handler>,
     );
 
     expect(tree.toJSON()).toMatchSnapshot();
@@ -27,10 +29,12 @@ describe('Handler', () => {
   it('should only return the Component, when loading and showComponentWhileLoading is false', () => {
     const tree = renderer.create(
       <Handler
-        Component={Component}
         showComponentWhileLoading={false}
         loading={false}
-      />,
+        checkedProperty={checkedProperty}
+      >
+        <Component />
+      </Handler>,
     );
 
     expect(tree.toJSON()).toMatchSnapshot();

@@ -8,7 +8,9 @@ const LoadingComponent = () => <img src="/img/spinner.svg" alt="loading..." />;
 describe('LoadingHandler', () => {
   it('should return the component when called with loading false', () => {
     const tree = renderer.create(
-      <LoadingHandler loading={false} Component={TestComponent} />,
+      <LoadingHandler loading={false}>
+        <TestComponent />
+      </LoadingHandler>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });
@@ -22,21 +24,27 @@ describe('LoadingHandler', () => {
 
   it('should return the LoadingComponent', () => {
     const tree = renderer.create(
-      <LoadingHandler LoadingComponent={LoadingComponent} Component={TestComponent} />,
+      <LoadingHandler LoadingComponent={LoadingComponent}>
+        <TestComponent />
+      </LoadingHandler>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should return the LoadingMessage with given loading message', () => {
     const tree = renderer.create(
-      <LoadingHandler Component={TestComponent} message="keep keep loading" />,
+      <LoadingHandler message="keep keep loading">
+        <TestComponent />
+      </LoadingHandler>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should return the LoadingMessage when called without LoadingComponent', () => {
     const tree = renderer.create(
-      <LoadingHandler Component={TestComponent} />,
+      <LoadingHandler>
+        <TestComponent />
+      </LoadingHandler>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });

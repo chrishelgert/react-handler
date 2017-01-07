@@ -10,7 +10,9 @@ const errorMessage = 'failed to call api';
 describe('ErrorHandler', () => {
   it('should return the component when called without errorMessage', () => {
     const tree = renderer.create(
-      <ErrorHandler Component={TestComponent} />,
+      <ErrorHandler>
+        <TestComponent />
+      </ErrorHandler>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });
@@ -25,15 +27,18 @@ describe('ErrorHandler', () => {
       <ErrorHandler
         ErrorComponent={ErrorComponent}
         message={errorMessage}
-        Component={TestComponent}
-      />,
+      >
+        <TestComponent />
+      </ErrorHandler>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should return the ErrorMessage when called without ErrorComponent', () => {
     const tree = renderer.create(
-      <ErrorHandler message={errorMessage} Component={TestComponent} />,
+      <ErrorHandler message={errorMessage}>
+        <TestComponent />
+      </ErrorHandler>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });

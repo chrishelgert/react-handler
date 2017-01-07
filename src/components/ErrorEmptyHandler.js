@@ -9,34 +9,28 @@ const ErrorEmptyHandler = ({
   errorMessage,
   ErrorComponent,
   emptyMessage = '',
-  emptyPropertyKey,
+  checkedProperty,
   EmptyComponent,
-  componentProps = {},
-  Component,
+  children,
 }) => (
-  <ErrorHandler
-    message={errorMessage}
-    ErrorComponent={ErrorComponent}
-    Component={() => (
-      <EmptyHandler
-        message={emptyMessage}
-        emptyPropertyKey={emptyPropertyKey}
-        EmptyComponent={EmptyComponent}
-        componentProps={componentProps}
-        Component={Component}
-      />
-    )}
-  />
+  <ErrorHandler message={errorMessage} ErrorComponent={ErrorComponent}>
+    <EmptyHandler
+      message={emptyMessage}
+      checkedProperty={checkedProperty}
+      EmptyComponent={EmptyComponent}
+    >
+      {children}
+    </EmptyHandler>
+  </ErrorHandler>
 );
 
 ErrorEmptyHandler.propTypes = {
   ErrorComponent: PropTypes.func,
   EmptyComponent: PropTypes.func,
-  Component: PropTypes.func,
   errorMessage: PropTypes.string,
   emptyMessage: PropTypes.string,
-  emptyPropertyKey: PropTypes.string,
-  componentProps: PropTypes.object,
+  checkedProperty: PropTypes.any,
+  children: PropTypes.node,
 };
 
 export default ErrorEmptyHandler;

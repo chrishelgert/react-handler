@@ -6,8 +6,7 @@ import React, { PropTypes } from 'react';
  */
 const LoadingHandler = ({
   LoadingComponent,
-  Component,
-  componentProps = {},
+  children,
   loading = true,
   message = 'loading...',
 }) => {
@@ -15,17 +14,12 @@ const LoadingHandler = ({
     return LoadingComponent ? <LoadingComponent /> : <div className="handler--loading">{message}</div>;
   }
 
-  if (Component) {
-    return <Component {...componentProps} />;
-  }
-
-  return null;
+  return children || null;
 };
 
 LoadingHandler.propTypes = {
   LoadingComponent: PropTypes.func,
-  Component: PropTypes.func,
-  componentProps: PropTypes.object,
+  children: PropTypes.node,
   loading: PropTypes.bool,
   message: PropTypes.string,
 };
