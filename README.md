@@ -36,10 +36,10 @@ class Example extends Component {
         errorMessage={this.state.error}
         loadingMessage="loading..."
         emptyMessage="0 Articles found"
-        Component={ArticleList}
-        componentProps={{ articles: this.state.articles }}
-        emptyPropertyKey="articles"
-      />
+        checkedProperty={this.state.articles}
+      >
+        <ArticleList articles={this.state.articles} />
+      </Handler>
     );
   }
 }
@@ -69,11 +69,9 @@ class Example extends Component {
 
   render() {
     return (
-      <LoadingHandler
-        loading={this.state.loading}
-        Component={ArticleList}
-        componentProps={{ articles: this.state.articles }}
-      />
+      <LoadingHandler loading={this.state.loading}>
+        <ArticleList articles={this.state.articles} />
+      </LoadingHandler>
     );
   }
 }
@@ -81,8 +79,6 @@ class Example extends Component {
 
 > Configuration:
 * LoadingComponent - Define your own LoadingComponent
-* Component - Component, when you´re not loading anything
-* componentProps - Properties for your Component
 * loading - Is loading in process
 * message - Define your own Loading-Message
 
@@ -106,11 +102,9 @@ class Example extends Component {
 
   render() {
     return (
-      <ErrorHandler
-        message={this.state.error}
-        Component={ArticleList}
-        componentProps={{ articles: this.state.articles }}
-      />
+      <ErrorHandler message={this.state.error}>
+        <ArticleList articles={this.state.articles} />
+      </ErrorHandler>
     );
   }
 }
@@ -118,8 +112,6 @@ class Example extends Component {
 
 > Configuration:
 * ErrorComponent - Define your own ErrorComponent
-* Component - Component, when there´s no error
-* componentProps - Properties for your Component
 * message - Error-Message, also used for error-check
 
 ***
@@ -141,12 +133,9 @@ class Example extends Component {
 
   render() {
     return (
-      <EmptyHandler
-        message="0 Articles found."
-        Component={ArticleList}
-        componentProps={{ articles: this.state.articles }}
-        emptyPropertyKey="articles"
-      />
+      <EmptyHandler message="0 Articles found." checkedProperty={this.state.articles}>
+        <ArticleList articles={this.state.articles} />
+      </EmptyHandler>
     );
   }
 }
@@ -154,9 +143,7 @@ class Example extends Component {
 
 > Configuration:
 * EmptyComponent - Define your own EmptyComponent
-* Component - Component, when the property is not empty
-* componentProps - Properties for your Component
-* emptyPropertyKey - which Property should be checked
+* checkedProperty - Property, which should not be empty
 * message - Define your Empty-Message
 
 ***
@@ -182,10 +169,10 @@ class Example extends Component {
       <ErrorEmptyHandler
         errorMessage={this.state.error}
         emptyMessage="0 Articles found."
-        Component={ArticleList}
-        componentProps={{ articles: this.state.articles }}
-        emptyPropertyKey="articles"
-      />
+        checkedProperty={this.state.articles}
+      >
+        <ArticleList articles={this.state.articles} />
+      </ErrorEmptyHandler>
     );
   }
 }
