@@ -51,7 +51,14 @@ Handler.propTypes = {
   loadingMessage: PropTypes.string,
   loading: PropTypes.bool,
   showComponentWhileLoading: PropTypes.bool,
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
+};
+
+Handler.defaultProps = {
+  LoadingComponent: null,
+  loadingMessage: undefined,
+  loading: true,
+  showComponentWhileLoading: true,
 };
 
 export default Handler;

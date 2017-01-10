@@ -13,13 +13,19 @@ const ErrorHandler = ({ message, ErrorComponent, children }) => {
     return <div className="handler--error">{message}</div>;
   }
 
-  return children || null;
+  return children;
 };
 
 ErrorHandler.propTypes = {
   message: PropTypes.string,
   ErrorComponent: PropTypes.func,
   children: PropTypes.node,
+};
+
+ErrorHandler.defaultProps = {
+  message: null,
+  ErrorComponent: null,
+  children: null,
 };
 
 export default ErrorHandler;

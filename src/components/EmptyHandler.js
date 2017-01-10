@@ -4,12 +4,7 @@ import React, { PropTypes } from 'react';
  * This Mini-Handler handles only the empty-state
  * or display the given Component.
  */
-const EmptyHandler = ({
-  message,
-  checkedProperty,
-  EmptyComponent,
-  children,
-}) => {
+const EmptyHandler = ({ message, checkedProperty, EmptyComponent, children }) => {
   if (!(checkedProperty && checkedProperty.length)) {
     if (EmptyComponent) {
       return <EmptyComponent>{message}</EmptyComponent>;
@@ -18,7 +13,7 @@ const EmptyHandler = ({
     return <div className="handler--empty">{message}</div>;
   }
 
-  return children || null;
+  return children;
 };
 
 EmptyHandler.propTypes = {
@@ -26,6 +21,12 @@ EmptyHandler.propTypes = {
   checkedProperty: PropTypes.any,
   EmptyComponent: PropTypes.func,
   children: PropTypes.node,
+};
+
+EmptyHandler.defaultProps = {
+  checkedProperty: null,
+  EmptyComponent: null,
+  children: null,
 };
 
 export default EmptyHandler;

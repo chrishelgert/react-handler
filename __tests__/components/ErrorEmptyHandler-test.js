@@ -8,7 +8,7 @@ const checkedProperty = ['test'];
 describe('ErrorEmptyHandler', () => {
   it('should display the error-message', () => {
     const tree = renderer.create(
-      <ErrorEmptyHandler errorMessage="failed to load articles">
+      <ErrorEmptyHandler errorMessage="failed to load articles" emptyMessage="0 Articles found">
         <Component />
       </ErrorEmptyHandler>,
     );
@@ -32,7 +32,7 @@ describe('ErrorEmptyHandler', () => {
 
   it('should display the Component', () => {
     const tree = renderer.create(
-      <ErrorEmptyHandler checkedProperty={checkedProperty}>
+      <ErrorEmptyHandler checkedProperty={checkedProperty} emptyMessage="0 Articles found">
         <Component />
       </ErrorEmptyHandler>,
     );

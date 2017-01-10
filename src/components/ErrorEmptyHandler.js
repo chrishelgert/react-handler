@@ -8,7 +8,7 @@ import ErrorHandler from './ErrorHandler';
 const ErrorEmptyHandler = ({
   errorMessage,
   ErrorComponent,
-  emptyMessage = '',
+  emptyMessage,
   checkedProperty,
   EmptyComponent,
   children,
@@ -28,9 +28,16 @@ ErrorEmptyHandler.propTypes = {
   ErrorComponent: PropTypes.func,
   EmptyComponent: PropTypes.func,
   errorMessage: PropTypes.string,
-  emptyMessage: PropTypes.string,
+  emptyMessage: PropTypes.string.isRequired,
   checkedProperty: PropTypes.any,
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
+};
+
+ErrorEmptyHandler.defaultProps = {
+  ErrorComponent: null,
+  EmptyComponent: null,
+  errorMessage: null,
+  checkedProperty: null,
 };
 
 export default ErrorEmptyHandler;
