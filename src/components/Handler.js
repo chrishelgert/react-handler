@@ -11,8 +11,8 @@ const Handler = (props) => {
     LoadingComponent,
     loadingMessage,
     children,
-    loading = true,
-    showComponentWhileLoading = true,
+    loading,
+    showComponentWhileLoading,
   } = props;
 
   if (showComponentWhileLoading) {
