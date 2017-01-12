@@ -1,6 +1,6 @@
 {
   "name": "react-handler",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "react-component that handles different states (loading, error, ...)",
   "browser": "dist/react-handler.js",
   "main": "lib/index.js",
