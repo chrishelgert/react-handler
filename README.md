@@ -23,7 +23,7 @@ class Example extends Component {
   // ...
 
   state = {
-    loading: false,
+    loading: true,
     error: '',
     articles: this.props.articles,
   };
@@ -62,7 +62,7 @@ class Example extends Component {
   // ...
 
   state = {
-    loading: false,
+    loading: true,
     articles: this.props.articles,
   };
 
