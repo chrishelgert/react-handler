@@ -10,9 +10,3 @@ cache:
   - node_modules
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-
-notifications:
-  slack:
-    rooms:
-      secure: cE5q7loUQ28uy4o39nJGkIbHpQnKAN6o7eINk19J1JhcMHIQ4oG+8Nq/L6nd5z+kjz4LGeHsBx/K3WoymTlfpGgpyVDMf+uUjLl7Ke1+TR9g2EwN9xk81no7qKl8rhnhwOTlXO1UC6HouggjL4dpuJRuIcuxLJ9IpLKFdxUYwLs2cy34Jqv3ZykQZeHe9wkeLTEOIqdNIUC51DEFSQyAviBUrTb2uiumqN/oVHNXxy7ZYs42RUWYXSi67Vx+6WyzwwbkVz3reBzC9+iPPzhU7cS0/DNMC4nVH1etlEUZgrRro1R9h2KIar6RXlD8+X6s7A0TLj8q+/ERCMQuNRB/ocKW3XTxTHq+15aDyTT+wTHpE34DmCaViJexJ9srNAaSw2ukBo5MlyzPhuuAH41Jhbb1VFRNunJd1o9SIkTJnL1gvGCVK1oVsrxdb9wf6SCBJ7QqqREa0RbTgHIrYFyGOH/GxV3/AM7HZ5GFXE6YNaOYl3wFGkc0d5n1mw2eJVYKcdGCwrCDPRuSEKAvHThjlJTdaSGkz2JTRJmM12m0PsRzCf1nPg1RictBjbmUcwkKbiJmmWpNErAeeH/f0k9dijrBtSnx80EvSTPxOF3dex8DPjs/2b4v/fimdKi8slAOMZx2chEhuVPCU5ou4rcPE16dm+NhbjoOhBDr7ZskyAI=
-  email: false
