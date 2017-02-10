@@ -1,0 +1,8 @@
+__tests__
+.appveyor.yml
+.babelrc
+.eslintignore
+.eslintrc
+.gitignore
+.travis.yml
+webpack.config.js
