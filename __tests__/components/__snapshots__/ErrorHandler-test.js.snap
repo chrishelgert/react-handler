@@ -1,15 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`ErrorHandler should return null when called without errorMessage and component 1`] = `null`;
 
 exports[`ErrorHandler should return the ErrorComponent 1`] = `
 <h2
-  className="error">
+  className="error"
+>
   failed to call api
 </h2>
 `;
 
 exports[`ErrorHandler should return the ErrorMessage when called without ErrorComponent 1`] = `
 <div
-  className="handler--error">
+  className="handler--error"
+>
   failed to call api
 </div>
 `;

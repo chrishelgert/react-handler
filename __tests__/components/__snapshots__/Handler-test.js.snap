@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Handler should only return the Component, when loading and showComponentWhileLoading is false 1`] = `
 <div
-  className="handler">
+  className="handler"
+>
   <div>
     Test
   </div>
@@ -9,9 +12,11 @@ exports[`Handler should only return the Component, when loading and showComponen
 
 exports[`Handler should only return the loading-message, wen showComponentWhileLoading is false 1`] = `
 <div
-  className="handler">
+  className="handler"
+>
   <div
-    className="handler--loading">
+    className="handler--loading"
+  >
     loading...
   </div>
 </div>
@@ -19,9 +24,11 @@ exports[`Handler should only return the loading-message, wen showComponentWhileL
 
 exports[`Handler should return the loading-message and the component 1`] = `
 <div
-  className="handler">
+  className="handler"
+>
   <div
-    className="handler--loading">
+    className="handler--loading"
+  >
     loading...
   </div>
   <div>

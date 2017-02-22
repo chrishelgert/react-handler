@@ -1,21 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`LoadingHandler should return null when called with loading false and no component 1`] = `null`;
 
 exports[`LoadingHandler should return the LoadingComponent 1`] = `
 <img
   alt="loading..."
-  src="/img/spinner.svg" />
+  src="/img/spinner.svg"
+/>
 `;
 
 exports[`LoadingHandler should return the LoadingMessage when called without LoadingComponent 1`] = `
 <div
-  className="handler--loading">
+  className="handler--loading"
+>
   loading...
 </div>
 `;
 
 exports[`LoadingHandler should return the LoadingMessage with given loading message 1`] = `
 <div
-  className="handler--loading">
+  className="handler--loading"
+>
   keep keep loading
 </div>
 `;
