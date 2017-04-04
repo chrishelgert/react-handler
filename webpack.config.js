@@ -1,33 +1,32 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const webpack = require('webpack');
+const webpack = require('webpack')
 
-const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV
 
 const config = {
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
-    ],
+      { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ }
+    ]
   },
   output: {
     library: 'react-handler',
-    libraryTarget: 'umd',
+    libraryTarget: 'umd'
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(env),
-    }),
+      'process.env.NODE_ENV': JSON.stringify(env)
+    })
   ],
   externals: {
     react: {
       root: 'React',
       commonjs2: 'react',
       commonjs: 'react',
-      amd: 'react',
-    },
-  },
-};
+      amd: 'react'
+    }
+  }
+}
 
 if (env === 'production') {
   const uglifyJS = new webpack.optimize.UglifyJsPlugin({
@@ -35,11 +34,11 @@ if (env === 'production') {
       pure_getters: true,
       unsafe: true,
       unsafe_comps: true,
-      warnings: false,
-    },
-  });
+      warnings: false
+    }
+  })
 
-  config.plugins.push(uglifyJS);
+  config.plugins.push(uglifyJS)
 }
 
-module.exports = config;
+module.exports = config

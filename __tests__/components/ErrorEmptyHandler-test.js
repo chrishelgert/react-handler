@@ -1,42 +1,42 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import ErrorEmptyHandler from '../../src/components/ErrorEmptyHandler';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import ErrorEmptyHandler from '../../src/components/ErrorEmptyHandler'
 
-const Component = () => <div>Test</div>;
-const checkedProperty = ['test'];
+const Component = () => <div>Test</div>
+const checkedProperty = ['test']
 
 describe('ErrorEmptyHandler', () => {
-  it('should display the error-message', () => {
+  test('displays the error-message', () => {
     const tree = renderer.create(
-      <ErrorEmptyHandler errorMessage="failed to load articles" emptyMessage="0 Articles found">
+      <ErrorEmptyHandler errorMessage='failed to load articles' emptyMessage='0 Articles found'>
         <Component />
       </ErrorEmptyHandler>,
-    );
+    )
 
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
 
-  it('should display the empty-message', () => {
+  test('displays the empty-message', () => {
     const tree = renderer.create(
       <ErrorEmptyHandler
         checkedProperty={{}}
-        emptyPropertyKey="articles"
-        emptyMessage="0 Articles found"
+        emptyPropertyKey='articles'
+        emptyMessage='0 Articles found'
       >
         <Component />
       </ErrorEmptyHandler>,
-    );
+    )
 
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
 
-  it('should display the Component', () => {
+  test('displays the Component', () => {
     const tree = renderer.create(
-      <ErrorEmptyHandler checkedProperty={checkedProperty} emptyMessage="0 Articles found">
+      <ErrorEmptyHandler checkedProperty={checkedProperty} emptyMessage='0 Articles found'>
         <Component />
       </ErrorEmptyHandler>,
-    );
+    )
 
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-});
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
+})

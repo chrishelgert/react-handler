@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmptyHandler should return null when called without Component and is not empty 1`] = `null`;
+exports[`EmptyHandler returns null when called without Component and is not empty 1`] = `null`;
 
-exports[`EmptyHandler should return the EmptyComponent, when the list is empty and called with EmptyComponent 1`] = `
+exports[`EmptyHandler returns the EmptyComponent, when the list is empty and called with EmptyComponent 1`] = `
 <h2
   className="empty"
 >
@@ -10,7 +10,7 @@ exports[`EmptyHandler should return the EmptyComponent, when the list is empty a
 </h2>
 `;
 
-exports[`EmptyHandler should return the EmptyMessage, when called without checkedProperty 1`] = `
+exports[`EmptyHandler returns the EmptyMessage, when called without checkedProperty 1`] = `
 <div
   className="handler--empty"
 >
@@ -18,7 +18,7 @@ exports[`EmptyHandler should return the EmptyMessage, when called without checke
 </div>
 `;
 
-exports[`EmptyHandler should return the EmptyMessage, when the list is empty 1`] = `
+exports[`EmptyHandler returns the EmptyMessage, when the list is empty 1`] = `
 <div
   className="handler--empty"
 >
@@ -26,7 +26,7 @@ exports[`EmptyHandler should return the EmptyMessage, when the list is empty 1`]
 </div>
 `;
 
-exports[`EmptyHandler should return the component when the element in componentProps is not empty 1`] = `
+exports[`EmptyHandler returns the component when the element in componentProps is not empty 1`] = `
 <h1>
   Test
 </h1>

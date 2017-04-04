@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoadingHandler should return null when called with loading false and no component 1`] = `null`;
+exports[`LoadingHandler returns null when called with loading false and no component 1`] = `null`;
 
-exports[`LoadingHandler should return the LoadingComponent 1`] = `
+exports[`LoadingHandler returns the LoadingComponent 1`] = `
 <img
   alt="loading..."
   src="/img/spinner.svg"
 />
 `;
 
-exports[`LoadingHandler should return the LoadingMessage when called without LoadingComponent 1`] = `
+exports[`LoadingHandler returns the LoadingMessage when called without LoadingComponent 1`] = `
 <div
   className="handler--loading"
 >
@@ -17,7 +17,7 @@ exports[`LoadingHandler should return the LoadingMessage when called without Loa
 </div>
 `;
 
-exports[`LoadingHandler should return the LoadingMessage with given loading message 1`] = `
+exports[`LoadingHandler returns the LoadingMessage with given loading message 1`] = `
 <div
   className="handler--loading"
 >
@@ -25,7 +25,7 @@ exports[`LoadingHandler should return the LoadingMessage with given loading mess
 </div>
 `;
 
-exports[`LoadingHandler should return the component when called with loading false 1`] = `
+exports[`LoadingHandler returns the component when called with loading false 1`] = `
 <h1>
   Test
 </h1>

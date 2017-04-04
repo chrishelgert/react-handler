@@ -1,28 +1,28 @@
-import React, { PropTypes } from 'react';
-import renderer from 'react-test-renderer';
-import ErrorHandler from '../../src/components/ErrorHandler';
+import React, { PropTypes } from 'react'
+import renderer from 'react-test-renderer'
+import ErrorHandler from '../../src/components/ErrorHandler'
 
-const TestComponent = () => <h1>Test</h1>;
-const ErrorComponent = ({ children }) => <h2 className="error">{children}</h2>;
-ErrorComponent.propTypes = { children: PropTypes.string };
-const errorMessage = 'failed to call api';
+const TestComponent = () => <h1>Test</h1>
+const ErrorComponent = ({ children }) => <h2 className='error'>{children}</h2>
+ErrorComponent.propTypes = { children: PropTypes.string }
+const errorMessage = 'failed to call api'
 
 describe('ErrorHandler', () => {
-  it('should return the component when called without errorMessage', () => {
+  test('returns the component when called without errorMessage', () => {
     const tree = renderer.create(
       <ErrorHandler>
         <TestComponent />
       </ErrorHandler>,
-    );
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
+    )
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
 
-  it('should return null when called without errorMessage and component', () => {
-    const tree = renderer.create(<ErrorHandler />);
-    expect(tree).toMatchSnapshot();
-  });
+  test('returns null when called without errorMessage and component', () => {
+    const tree = renderer.create(<ErrorHandler />)
+    expect(tree).toMatchSnapshot()
+  })
 
-  it('should return the ErrorComponent', () => {
+  test('returns the ErrorComponent', () => {
     const tree = renderer.create(
       <ErrorHandler
         ErrorComponent={ErrorComponent}
@@ -30,16 +30,16 @@ describe('ErrorHandler', () => {
       >
         <TestComponent />
       </ErrorHandler>,
-    );
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
+    )
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
 
-  it('should return the ErrorMessage when called without ErrorComponent', () => {
+  test('returns the ErrorMessage when called without ErrorComponent', () => {
     const tree = renderer.create(
       <ErrorHandler message={errorMessage}>
         <TestComponent />
       </ErrorHandler>,
-    );
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-});
+    )
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
+})

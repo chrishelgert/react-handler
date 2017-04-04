@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
 /**
  * This Mini-Handler handles only the empty-state
@@ -7,26 +7,26 @@ import React, { PropTypes } from 'react';
 const EmptyHandler = ({ message, checkedProperty, EmptyComponent, children }) => {
   if (!(checkedProperty && checkedProperty.length)) {
     if (EmptyComponent) {
-      return <EmptyComponent>{message}</EmptyComponent>;
+      return <EmptyComponent>{message}</EmptyComponent>
     }
 
-    return <div className="handler--empty">{message}</div>;
+    return <div className='handler--empty'>{message}</div>
   }
 
-  return children;
-};
+  return children
+}
 
 EmptyHandler.propTypes = {
   message: PropTypes.string.isRequired,
   checkedProperty: PropTypes.any,
   EmptyComponent: PropTypes.func,
-  children: PropTypes.node,
-};
+  children: PropTypes.node
+}
 
 EmptyHandler.defaultProps = {
   checkedProperty: null,
   EmptyComponent: null,
-  children: null,
-};
+  children: null
+}
 
-export default EmptyHandler;
+export default EmptyHandler

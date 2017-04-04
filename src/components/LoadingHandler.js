@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
 /**
  * This Mini-Handler handles only the loading-state
@@ -6,24 +6,24 @@ import React, { PropTypes } from 'react';
  */
 const LoadingHandler = ({ LoadingComponent, children, loading, message }) => {
   if (loading) {
-    return LoadingComponent ? <LoadingComponent /> : <div className="handler--loading">{message}</div>;
+    return LoadingComponent ? <LoadingComponent /> : <div className='handler--loading'>{message}</div>
   }
 
-  return children;
-};
+  return children
+}
 
 LoadingHandler.propTypes = {
   LoadingComponent: PropTypes.func,
   children: PropTypes.node,
   loading: PropTypes.bool,
-  message: PropTypes.string,
-};
+  message: PropTypes.string
+}
 
 LoadingHandler.defaultProps = {
   LoadingComponent: null,
   children: null,
   loading: true,
-  message: 'loading...',
-};
+  message: 'loading...'
+}
 
-export default LoadingHandler;
+export default LoadingHandler

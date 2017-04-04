@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/chrishelgert/react-handler.svg?branch=master)](https://travis-ci.org/chrishelgert/react-handler)
 [![Build status](https://ci.appveyor.com/api/projects/status/c5qo9wa0n4uwakfj?svg=true)](https://ci.appveyor.com/project/chrishelgert/react-handler/branch/master)
 [![codecov](https://codecov.io/gh/chrishelgert/react-handler/branch/master/graph/badge.svg)](https://codecov.io/gh/chrishelgert/react-handler)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > A react-component for handling typical react/redux-states (loading, error, ...)
 

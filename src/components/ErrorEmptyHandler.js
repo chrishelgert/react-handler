@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
-import EmptyHandler from './EmptyHandler';
-import ErrorHandler from './ErrorHandler';
+import React, { PropTypes } from 'react'
+import EmptyHandler from './EmptyHandler'
+import ErrorHandler from './ErrorHandler'
 
 /**
  * This Sub-Handler combines the Error and Empty-Handler
@@ -11,7 +11,7 @@ const ErrorEmptyHandler = ({
   emptyMessage,
   checkedProperty,
   EmptyComponent,
-  children,
+  children
 }) => (
   <ErrorHandler message={errorMessage} ErrorComponent={ErrorComponent}>
     <EmptyHandler
@@ -22,7 +22,7 @@ const ErrorEmptyHandler = ({
       {children}
     </EmptyHandler>
   </ErrorHandler>
-);
+)
 
 ErrorEmptyHandler.propTypes = {
   ErrorComponent: PropTypes.func,
@@ -30,14 +30,14 @@ ErrorEmptyHandler.propTypes = {
   errorMessage: PropTypes.string,
   emptyMessage: PropTypes.string.isRequired,
   checkedProperty: PropTypes.any,
-  children: PropTypes.node.isRequired,
-};
+  children: PropTypes.node.isRequired
+}
 
 ErrorEmptyHandler.defaultProps = {
   ErrorComponent: null,
   EmptyComponent: null,
   errorMessage: null,
-  checkedProperty: null,
-};
+  checkedProperty: null
+}
 
-export default ErrorEmptyHandler;
+export default ErrorEmptyHandler

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`react-handler should contain the Handler-Component 1`] = `[Function]`;
+exports[`react-handler contains the Handler-Component 1`] = `[Function]`;
 
-exports[`react-handler should contain the SupHandler´s 1`] = `
+exports[`react-handler contains the the SupHandler´s 1`] = `
 Object {
   "EmptyHandler": [Function],
   "ErrorEmptyHandler": [Function],

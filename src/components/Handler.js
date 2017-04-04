@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
-import ErrorEmptyHandler from './ErrorEmptyHandler';
-import LoadingHandler from './LoadingHandler';
+import React, { PropTypes } from 'react'
+import ErrorEmptyHandler from './ErrorEmptyHandler'
+import LoadingHandler from './LoadingHandler'
 
 /**
  * The Handler handles loading, error and empty state
@@ -12,12 +12,12 @@ const Handler = (props) => {
     loadingMessage,
     children,
     loading,
-    showComponentWhileLoading,
-  } = props;
+    showComponentWhileLoading
+  } = props
 
   if (showComponentWhileLoading) {
     return (
-      <div className="handler">
+      <div className='handler'>
         <LoadingHandler
           loading={loading}
           message={loadingMessage}
@@ -28,11 +28,11 @@ const Handler = (props) => {
           {children}
         </ErrorEmptyHandler>
       </div>
-    );
+    )
   }
 
   return (
-    <div className="handler">
+    <div className='handler'>
       <LoadingHandler
         loading={loading}
         message={loadingMessage}
@@ -43,22 +43,22 @@ const Handler = (props) => {
         </ErrorEmptyHandler>
       </LoadingHandler>
     </div>
-  );
-};
+  )
+}
 
 Handler.propTypes = {
   LoadingComponent: PropTypes.func,
   loadingMessage: PropTypes.string,
   loading: PropTypes.bool,
   showComponentWhileLoading: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-};
+  children: PropTypes.node.isRequired
+}
 
 Handler.defaultProps = {
   LoadingComponent: null,
   loadingMessage: undefined,
   loading: true,
-  showComponentWhileLoading: true,
-};
+  showComponentWhileLoading: true
+}
 
-export default Handler;
+export default Handler

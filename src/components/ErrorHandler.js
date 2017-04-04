@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
 /**
  * This Mini-Handler handles only the error-state
@@ -7,25 +7,25 @@ import React, { PropTypes } from 'react';
 const ErrorHandler = ({ message, ErrorComponent, children }) => {
   if (message) {
     if (ErrorComponent) {
-      return <ErrorComponent>{message}</ErrorComponent>;
+      return <ErrorComponent>{message}</ErrorComponent>
     }
 
-    return <div className="handler--error">{message}</div>;
+    return <div className='handler--error'>{message}</div>
   }
 
-  return children;
-};
+  return children
+}
 
 ErrorHandler.propTypes = {
   message: PropTypes.string,
   ErrorComponent: PropTypes.func,
-  children: PropTypes.node,
-};
+  children: PropTypes.node
+}
 
 ErrorHandler.defaultProps = {
   message: null,
   ErrorComponent: null,
-  children: null,
-};
+  children: null
+}
 
-export default ErrorHandler;
+export default ErrorHandler

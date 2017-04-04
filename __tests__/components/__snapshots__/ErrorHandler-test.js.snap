@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ErrorHandler should return null when called without errorMessage and component 1`] = `null`;
+exports[`ErrorHandler returns null when called without errorMessage and component 1`] = `null`;
 
-exports[`ErrorHandler should return the ErrorComponent 1`] = `
+exports[`ErrorHandler returns the ErrorComponent 1`] = `
 <h2
   className="error"
 >
@@ -10,7 +10,7 @@ exports[`ErrorHandler should return the ErrorComponent 1`] = `
 </h2>
 `;
 
-exports[`ErrorHandler should return the ErrorMessage when called without ErrorComponent 1`] = `
+exports[`ErrorHandler returns the ErrorMessage when called without ErrorComponent 1`] = `
 <div
   className="handler--error"
 >
@@ -18,7 +18,7 @@ exports[`ErrorHandler should return the ErrorMessage when called without ErrorCo
 </div>
 `;
 
-exports[`ErrorHandler should return the component when called without errorMessage 1`] = `
+exports[`ErrorHandler returns the component when called without errorMessage 1`] = `
 <h1>
   Test
 </h1>

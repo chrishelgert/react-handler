@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ErrorEmptyHandler should display the Component 1`] = `
+exports[`ErrorEmptyHandler displays the Component 1`] = `
 <div>
   Test
 </div>
 `;
 
-exports[`ErrorEmptyHandler should display the empty-message 1`] = `
+exports[`ErrorEmptyHandler displays the empty-message 1`] = `
 <div
   className="handler--empty"
 >
@@ -14,7 +14,7 @@ exports[`ErrorEmptyHandler should display the empty-message 1`] = `
 </div>
 `;
 
-exports[`ErrorEmptyHandler should display the error-message 1`] = `
+exports[`ErrorEmptyHandler displays the error-message 1`] = `
 <div
   className="handler--error"
 >
