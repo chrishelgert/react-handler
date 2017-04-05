@@ -61,17 +61,10 @@
       "**/src/**/*.js"
     ]
   },
-  "greenkeeper": {
-    "ignore": [
-      "eslint",
-      "eslint-plugin-import",
-      "eslint-plugin-jsx-a11y",
-      "eslint-plugin-react"
-    ]
-  },
   "standard": {
     "env": {
       "jest": true
-    }
+    },
+    "ignore": ["dist"]
   }
 }
