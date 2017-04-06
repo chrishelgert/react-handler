@@ -10,7 +10,7 @@ describe('Handler', () => {
     const tree = renderer.create(
       <Handler checkedProperty={checkedProperty} emptyMessage='0 Articles found'>
         <Component />
-      </Handler>,
+      </Handler>
     )
 
     expect(tree.toJSON()).toMatchSnapshot()
@@ -20,7 +20,7 @@ describe('Handler', () => {
     const tree = renderer.create(
       <Handler showComponentWhileLoading={false} checkedProperty={checkedProperty} emptyMessage='0 Articles found'>
         <Component />
-      </Handler>,
+      </Handler>
     )
 
     expect(tree.toJSON()).toMatchSnapshot()
@@ -35,7 +35,7 @@ describe('Handler', () => {
         emptyMessage='0 Articles found'
       >
         <Component />
-      </Handler>,
+      </Handler>
     )
 
     expect(tree.toJSON()).toMatchSnapshot()

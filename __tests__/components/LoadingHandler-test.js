@@ -10,14 +10,14 @@ describe('LoadingHandler', () => {
     const tree = renderer.create(
       <LoadingHandler loading={false}>
         <TestComponent />
-      </LoadingHandler>,
+      </LoadingHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
 
   test('returns null when called with loading false and no component', () => {
     const tree = renderer.create(
-      <LoadingHandler loading={false} />,
+      <LoadingHandler loading={false} />
     )
     expect(tree).toMatchSnapshot()
   })
@@ -26,7 +26,7 @@ describe('LoadingHandler', () => {
     const tree = renderer.create(
       <LoadingHandler LoadingComponent={LoadingComponent}>
         <TestComponent />
-      </LoadingHandler>,
+      </LoadingHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
@@ -35,7 +35,7 @@ describe('LoadingHandler', () => {
     const tree = renderer.create(
       <LoadingHandler message='keep keep loading'>
         <TestComponent />
-      </LoadingHandler>,
+      </LoadingHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
@@ -44,7 +44,7 @@ describe('LoadingHandler', () => {
     const tree = renderer.create(
       <LoadingHandler>
         <TestComponent />
-      </LoadingHandler>,
+      </LoadingHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })

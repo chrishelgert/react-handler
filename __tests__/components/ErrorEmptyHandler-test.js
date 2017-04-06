@@ -10,7 +10,7 @@ describe('ErrorEmptyHandler', () => {
     const tree = renderer.create(
       <ErrorEmptyHandler errorMessage='failed to load articles' emptyMessage='0 Articles found'>
         <Component />
-      </ErrorEmptyHandler>,
+      </ErrorEmptyHandler>
     )
 
     expect(tree.toJSON()).toMatchSnapshot()
@@ -24,7 +24,7 @@ describe('ErrorEmptyHandler', () => {
         emptyMessage='0 Articles found'
       >
         <Component />
-      </ErrorEmptyHandler>,
+      </ErrorEmptyHandler>
     )
 
     expect(tree.toJSON()).toMatchSnapshot()
@@ -34,7 +34,7 @@ describe('ErrorEmptyHandler', () => {
     const tree = renderer.create(
       <ErrorEmptyHandler checkedProperty={checkedProperty} emptyMessage='0 Articles found'>
         <Component />
-      </ErrorEmptyHandler>,
+      </ErrorEmptyHandler>
     )
 
     expect(tree.toJSON()).toMatchSnapshot()

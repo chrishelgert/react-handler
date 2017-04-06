@@ -12,7 +12,7 @@ describe('ErrorHandler', () => {
     const tree = renderer.create(
       <ErrorHandler>
         <TestComponent />
-      </ErrorHandler>,
+      </ErrorHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
@@ -29,7 +29,7 @@ describe('ErrorHandler', () => {
         message={errorMessage}
       >
         <TestComponent />
-      </ErrorHandler>,
+      </ErrorHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
@@ -38,7 +38,7 @@ describe('ErrorHandler', () => {
     const tree = renderer.create(
       <ErrorHandler message={errorMessage}>
         <TestComponent />
-      </ErrorHandler>,
+      </ErrorHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })

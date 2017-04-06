@@ -15,7 +15,7 @@ describe('EmptyHandler', () => {
       <EmptyHandler
         checkedProperty={componentPropsFilled.list}
         message={emptyMessage}
-      />,
+      />
     )
     expect(tree).toMatchSnapshot()
   })
@@ -27,7 +27,7 @@ describe('EmptyHandler', () => {
         message={emptyMessage}
       >
         <TestComponent />
-      </EmptyHandler>,
+      </EmptyHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
@@ -40,7 +40,7 @@ describe('EmptyHandler', () => {
         message={emptyMessage}
       >
         <TestComponent />
-      </EmptyHandler>,
+      </EmptyHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
@@ -50,7 +50,7 @@ describe('EmptyHandler', () => {
       <EmptyHandler
         checkedProperty={componentPropsEmpty.list}
         message={emptyMessage}
-      />,
+      />
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
@@ -59,7 +59,7 @@ describe('EmptyHandler', () => {
     const tree = renderer.create(
       <EmptyHandler message={emptyMessage}>
         <TestComponent />
-      </EmptyHandler>,
+      </EmptyHandler>
     )
     expect(tree.toJSON()).toMatchSnapshot()
   })
