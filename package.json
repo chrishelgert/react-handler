@@ -48,8 +48,8 @@
     "react": "^15.4.1",
     "react-test-renderer": "^15.4.1",
     "rimraf": "^2.5.4",
-    "snazzy": "^6.0.0",
-    "standard": "^10.0.0",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.1",
     "webpack": "^2.3.0"
   },
   "peerDependencies": {
@@ -65,6 +65,8 @@
     "env": {
       "jest": true
     },
-    "ignore": ["dist"]
+    "ignore": [
+      "dist"
+    ]
   }
 }
