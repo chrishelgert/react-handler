@@ -192,4 +192,4 @@ class Example extends Component {
 * Create pull request
 
 ## License
-Copyright (c) 2016-2017 Chris Helgert. See [License](./LICENSE) for details.
+Copyright (c) 2016-present Chris Helgert. See [License](./LICENSE) for details.
